@@ -1,21 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Player
+public class PlayerMovement : MoveableObject
 {
-    public class PlayerMovement : MoveableObject
-    {
+    //read movment every frame
+    //aply force every frame
+    // have th abilkity to toggle on and off
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
 }

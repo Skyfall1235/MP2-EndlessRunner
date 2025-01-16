@@ -1,16 +1,20 @@
+
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    [SerializeField] InputActionMap map;
+    public InputActionMap Map { get => map; set => map = value; }
+
+    public UnityEngine.InputSystem.TouchPhase currenttouchPhase;
+    public bool IsTouching 
+    { 
+        get => GetTouchingState(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    internal bool GetTouchingState()
     {
-        
+        return false; // for now
     }
 }
