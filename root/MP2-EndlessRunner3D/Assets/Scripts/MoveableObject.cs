@@ -11,7 +11,7 @@ public class MoveableObject : MonoBehaviour
 
     public void MoveObject(Vector3 Direction, float speed)
     {
-        objectRigidbody.AddForce(Direction * speed * Time.deltaTime); 
+        objectRigidbody.AddForce(speed * Time.deltaTime * Direction); 
     }
 
     public void HaltObjectMovement()

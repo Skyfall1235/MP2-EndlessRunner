@@ -1,20 +1,28 @@
-
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [SerializeField] InputActionMap map;
-    public InputActionMap Map { get => map; set => map = value; }
+    public UnityEvent OnTap;
+    public bool DEBUGJUMP = true;
 
-    public UnityEngine.InputSystem.TouchPhase currenttouchPhase;
-    public bool IsTouching 
-    { 
-        get => GetTouchingState(); 
-    }
-
-    internal bool GetTouchingState()
+    private void Update()
     {
-        return false; // for now
+        
+        if(Input.GetKeyDown(KeyCode.Space) && DEBUGJUMP)
+        {
+            OnTap.Invoke();
+            return;
+        }
+
+        if (Input.touchCount < 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                OnTap.Invoke();
+                return;
+            }
+        } 
     }
 }

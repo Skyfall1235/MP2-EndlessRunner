@@ -6,5 +6,9 @@ public interface IInteractable
     {
         Powerup, Obststacle
     }
-    public void Interact();
+    /// <summary>
+    /// Calls the interaction with the movemnet controller and the object hit to begin
+    /// </summary>
+    /// <param name="movementController"></param>
+    public void Interact(PlayerMovement movementController = null);
 }   

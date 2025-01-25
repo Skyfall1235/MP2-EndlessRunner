@@ -10,7 +10,7 @@ public class BaseInteractable : MonoBehaviour, IInteractable
         }
     }
     [SerializeField] private IInteractable.InteractableType interactionType;
-    public virtual void Interact()
+    public virtual void Interact(PlayerMovement m)
     {
         throw new System.NotImplementedException();
     }
