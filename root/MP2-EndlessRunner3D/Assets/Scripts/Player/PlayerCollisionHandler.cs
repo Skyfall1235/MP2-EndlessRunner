@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerCollisionHandler : MonoBehaviour
 {
     /// <summary>

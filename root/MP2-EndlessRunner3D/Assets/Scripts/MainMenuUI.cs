@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //the main menu should basically be a start and quit button
+    [SerializeField] private string SceneName;
+
+    public void LaunchGame()
     {
-        
+        LaunchScene(SceneName);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LaunchScene(string sceneName)
     {
-        
+        Debug.Log($"Loading scene {SceneName}")
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

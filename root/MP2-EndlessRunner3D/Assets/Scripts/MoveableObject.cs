@@ -5,7 +5,7 @@ public class MoveableObject : MonoBehaviour
 {
     //insert the abilities to move through phyisics here. will do later.
 
-    private Rigidbody objectRigidbody;
+    [SerializeField] private Rigidbody objectRigidbody;
     public Rigidbody ObjectRigidbody { get => objectRigidbody; set => objectRigidbody = value; }
 
 

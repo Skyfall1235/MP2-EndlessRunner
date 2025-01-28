@@ -1,26 +1,21 @@
 ﻿using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(PlayerCollisionHandler))]
 public class PlayerMovement : MoveableObject
 {
-    //read movment every frame
-    //aply force every frame
-    // have th ability to toggle on and off
-
-    //for now
-    public float jumpForce = 5f;
-    private Rigidbody rb;
+    [SerializeField] private float jumpForce = 5f;
     public bool ReverseGravity;
     public bool TimeSlow;
-    public float PowerUpTime = 2f;
-    public float TimeSlowScale = 0.7f;
+    [SerializeField] private float PowerUpTime = 2f;
+    [SerializeField] private float TimeSlowScale = 0.7f;
 
-    void Start()
+    void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        objectRigidbody = GetComponent<Rigidbody>();
     }
-    private void Update()
+    void Update()
     {
         if(ReverseGravity)
         {
@@ -36,12 +31,14 @@ public class PlayerMovement : MoveableObject
         {
             UpDirection = Vector3.down;
         }
-        rb.linearVelocity = UpDirection * jumpForce;
+        objectRigidbody.MoveObject(UpDirection, jumpForce);
     }
+
     public void ChangeGravity()
     {
         StartCoroutine(ChangeGravitySequence());
     }
+
     public void SlowTime()
     {
         StartCoroutine(SlowTimeSequence());
