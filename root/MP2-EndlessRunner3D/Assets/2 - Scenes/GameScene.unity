@@ -152,12 +152,15 @@ MonoBehaviour:
   - {fileID: 4252864021283425076, guid: f96f2c4c7c4f44f449ebf593c36460b0, type: 3}
   - {fileID: 5219456916682594601, guid: 429cb7b7a0e89834da69623bdeb14491, type: 3}
   - {fileID: 915302207369977144, guid: 274e194077f3b5347a7c016a473c487d, type: 3}
+  InteractablePrefabs:
+  - {fileID: 761922592961705516, guid: d4c13898500d7a44ca0a978661336aa2, type: 3}
   gameObjectsToMove:
   - {fileID: 1566056438}
   movementDirection: {x: -1, y: 0, z: 0}
   spawnSpacing: 42.5
   rampUpDuration: 100
   targetValue: 10
+  InteractableSpawntimeScalar: 2
   EndOfGame:
     m_PersistentCalls:
       m_Calls:
@@ -704,7 +707,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3448762352553577333, guid: f96f2c4c7c4f44f449ebf593c36460b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.21
+      value: -20.03
       objectReference: {fileID: 0}
     - target: {fileID: 3448762352553577333, guid: f96f2c4c7c4f44f449ebf593c36460b0, type: 3}
       propertyPath: m_LocalPosition.y

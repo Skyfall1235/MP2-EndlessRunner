@@ -6,11 +6,13 @@ using UnityEngine.Events;
 public class GameSpawner : MonoBehaviour
 {
     public List<GameObject> FloorPrefabs;
+    public List<GameObject> InteractablePrefabs;
     public List<GameObject> gameObjectsToMove;
     public Vector3 movementDirection = Vector3.forward; // Default direction: forward
     public float spawnSpacing = 30f;
     public float rampUpDuration = 5f; // Time in seconds for ramp-up
     public float targetValue = 10f;
+    public float InteractableSpawntimeScalar = 2;
     private float currentRampTime = 0f;
     public bool GameIsActive
     {
@@ -34,6 +36,7 @@ public class GameSpawner : MonoBehaviour
         }
         SpawnFloor();
         StartCoroutine(MoveFloorsCoroutine());
+        StartCoroutine(SpawnInteractablesCoroutine());
     }
 
     private void MoveGameObjects()
@@ -78,7 +81,7 @@ public class GameSpawner : MonoBehaviour
         }
 
         Vector3 spawnPosition = Vector3.right * spawnSpacing; // Start spawning at this GameObject's position offset by the spacing amount
-        int randomPrefab = Random.Range(0, 3);
+        int randomPrefab = Random.Range(0, FloorPrefabs.Count);
 
         if (FloorPrefabs[randomPrefab] != null)
         {
@@ -90,6 +93,37 @@ public class GameSpawner : MonoBehaviour
             Debug.LogWarning($"GameObject at index {randomPrefab} is null.  Consider removing it from the list.");
         }
         
+    }
+
+    private void SpawnInteractable(float SpeedOfObject)
+    {
+        if (InteractablePrefabs == null || InteractablePrefabs.Count == 0)
+        {
+            Debug.LogWarning("No GameObjects assigned to spawn.");
+            return;
+        }
+
+        Vector3 spawnPosition = Vector3.right * spawnSpacing; // Start spawning at this GameObject's position offset by the spacing amount
+        
+        spawnPosition = new Vector3(0, Random.Range(1, 12), spawnPosition.z);
+        int randomPrefab = Random.Range(0, InteractablePrefabs.Count);
+
+        if (InteractablePrefabs[randomPrefab] != null)
+        {
+            GameObject newInteractable = Instantiate(InteractablePrefabs[randomPrefab], spawnPosition, Quaternion.identity);
+            MoveableObject movableComponent = newInteractable.GetComponentInChildren<MoveableObject>();
+            if(movableComponent != null )
+            {
+                Debug.Log("applying movement force");
+                movableComponent.MoveObject(movementDirection, SpeedOfObject);
+            }
+
+            Debug.Log($"new interactable spawned with {newInteractable.transform.rotation}");
+        }
+        else
+        {
+            Debug.LogWarning($"GameObject at index {randomPrefab} is null.  Consider removing it from the list.");
+        }
     }
 
     private float RampedValue()
@@ -112,7 +146,6 @@ public class GameSpawner : MonoBehaviour
         Debug.Log("Ramped Value: " + RampedValue());
     }
 
-    //ienumaterable, calculate using fixed delta time what the total time to move the diastance is, then delay spawning til that time - some offset to ensure things are smooth
     private IEnumerator MoveFloorsCoroutine()
     {
         while (GameIsActive) // Check continuously
@@ -123,7 +156,6 @@ public class GameSpawner : MonoBehaviour
                 {
                     if (gameObjectsToMove[i] != null) // Check for null references
                     {
-                        // Assuming you want to check the Z position (you can change this)
                         if (gameObjectsToMove[0].transform.position.x < -28 && gameObjectsToMove.Count == 1)
                         {
                             SpawnFloor();
@@ -138,6 +170,17 @@ public class GameSpawner : MonoBehaviour
             }
             MoveGameObjects();
             yield return null; // Wait for the next frame
+        }
+    }
+    private IEnumerator SpawnInteractablesCoroutine()
+    {
+        while (GameIsActive)
+        {
+            float rampedVal = RampedValue();
+            float rampedSpeed = (targetValue / rampedVal / InteractableSpawntimeScalar); // should get me pretty fast
+            
+            SpawnInteractable((rampedVal + 1) * 500f);
+            yield return new WaitForSeconds(rampedSpeed);
         }
     }
 }
