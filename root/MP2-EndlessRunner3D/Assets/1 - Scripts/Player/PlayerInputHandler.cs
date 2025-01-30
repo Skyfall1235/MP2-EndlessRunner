@@ -25,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void TapCtx(InputAction.CallbackContext context)
     {
+        Debug.Log("tapping");
         OnTap.Invoke();
     }
 }

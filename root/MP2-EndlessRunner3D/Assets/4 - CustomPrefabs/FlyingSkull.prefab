@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 179133563065086893}
   - component: {fileID: 986114551357921131}
   - component: {fileID: 6115092822481709288}
+  - component: {fileID: 5695596268298293697}
   m_Layer: 0
   m_Name: FlyingSkullObs
   m_TagString: Untagged
@@ -162,6 +163,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRigidbody: {fileID: 986114551357921131}
   interactionType: 1
+--- !u!135 &5695596268298293697
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145887950694253445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8119571
+  m_Center: {x: 0, y: 0.04353088, z: 0.012019277}
 --- !u!1001 &4796993048470805623
 PrefabInstance:
   m_ObjectHideFlags: 0
