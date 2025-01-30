@@ -1,22 +1,30 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerInputHandler : MonoBehaviour
 {
     public UnityEvent OnTap;
+    [SerializeField] InputAction Tap;
     //[SerializeField] private bool DEBUGJUMP = true;  NO LONGER NEEDED
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.touchCount < 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                OnTap.Invoke();
-                return;
-            }
-        } 
+        Tap.Enable();
+    }
+    private void OnDisable()
+    {
+        Tap.Disable();
+    }
+    private void Awake()
+    {
+        Tap.performed += TapCtx;
+    }
+
+
+    private void TapCtx(InputAction.CallbackContext context)
+    {
+        OnTap.Invoke();
     }
 }

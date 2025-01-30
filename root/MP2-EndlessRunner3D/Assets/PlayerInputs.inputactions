@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Jump",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "63777770-e40f-4bff-8549-04a9e68a1cda",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -19,7 +19,18 @@
                 {
                     "name": "",
                     "id": "18e9c958-039d-429e-9e3a-ab3f85194fc7",
-                    "path": "<Touchscreen>/primaryTouch/startPosition",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26c05432-a70b-4d53-b3b2-e285e4e3bd1f",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -122,7 +122,6 @@ GameObject:
   - component: {fileID: 632572658076948823}
   - component: {fileID: 4299324542051776266}
   - component: {fileID: 6171046478550649425}
-  - component: {fileID: 8614031611167681728}
   - component: {fileID: 3565688486233552885}
   m_Layer: 0
   m_Name: Player
@@ -141,7 +140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.41, y: 1.066, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.769, y: 1.769, z: 1.769}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9154719104780975699}
@@ -263,7 +262,7 @@ MonoBehaviour:
   OnTap:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8614031611167681728}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: ForceJump
         m_Mode: 1
@@ -275,25 +274,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8614031611167681728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3647808828339566969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be116f2fcebc30a4eb798f966b93a6de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectRigidbody: {fileID: 0}
-  jumpForce: 5
-  ReverseGravity: 0
-  TimeSlow: 0
-  PowerUpTime: 2
-  TimeSlowScale: 0.7
-  spawner: {fileID: 0}
+  Tap:
+    m_Name: Tap
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5ec0c06a-ce4a-4a35-970f-c5e1415c2a3c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8f9e7bfe-d714-428c-bdb9-7d2cb6d2e793
+      m_Path: <Touchscreen>/primaryTouch/tap
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tap
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b86bf526-3850-4b66-aa3e-71f1d783f8bd
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tap
+      m_Flags: 0
+    m_Flags: 0
 --- !u!114 &3565688486233552885
 MonoBehaviour:
   m_ObjectHideFlags: 0
