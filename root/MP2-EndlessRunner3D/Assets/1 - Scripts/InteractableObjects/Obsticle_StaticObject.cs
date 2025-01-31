@@ -1,14 +1,20 @@
-﻿using System.Collections;
 using UnityEngine;
 
-public class Obsticle_FlyingObject : MoveableObject, IInteractable
+public class Obsticle_StaticObject : MonoBehaviour, IInteractable
 {
+    //[SerializeField] Vector3 position;
+    //[SerializeField] float Yrot;
     public IInteractable.InteractableType InteractType
     {
         get
         {
             return interactionType;
         }
+    }
+    private void Start()
+    {
+        ///transform.position = position;
+        //transform.Rotate(new Vector3(0f, Yrot, 0));
     }
 
     private void Update()
@@ -24,7 +30,7 @@ public class Obsticle_FlyingObject : MoveableObject, IInteractable
     public void Interact(PlayerMovement movementController = null)
     {
         //check if the buddle shield is there, if so, break both items
-        if(movementController.IsUsingShield)
+        if (movementController.IsUsingShield)
         {
             //end, pop sield, and die
             movementController.ToggleBubbleShield(false);

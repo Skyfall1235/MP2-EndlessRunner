@@ -105,7 +105,7 @@ public class GameSpawner : MonoBehaviour
 
         Vector3 spawnPosition = Vector3.right * spawnSpacing; // Start spawning at this GameObject's position offset by the spacing amount
         
-        spawnPosition = new Vector3(0, Random.Range(1, 12), spawnPosition.z);
+        spawnPosition = new Vector3(20, Random.Range(1, 12), spawnPosition.z);
         int randomPrefab = Random.Range(0, InteractablePrefabs.Count);
 
         if (InteractablePrefabs[randomPrefab] != null)
@@ -177,9 +177,11 @@ public class GameSpawner : MonoBehaviour
         while (GameIsActive)
         {
             float rampedVal = RampedValue();
-            float rampedSpeed = (targetValue / rampedVal / InteractableSpawntimeScalar); // should get me pretty fast
+            float rampedSpeed = (((100 - rampedVal)/10) + 1); // should get me pretty fast
             
             SpawnInteractable((rampedVal + 1) * 500f);
+            Debug.Log(rampedSpeed);
+            Debug.Log(rampedVal);
             yield return new WaitForSeconds(rampedSpeed);
         }
     }

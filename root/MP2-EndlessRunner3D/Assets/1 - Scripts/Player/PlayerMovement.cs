@@ -48,8 +48,13 @@ public class PlayerMovement : MoveableObject
         StartCoroutine(SlowTimeSequence());
     }
 
+    /// <summary>
+    /// Sets the active state of the shield to the boolean input
+    /// </summary>
+    /// <param name="val">the boolean input</param>
     public void ToggleBubbleShield(bool val)
     {
+        IsUsingShield = val;
         ToggleShield.Invoke(val);
     }
 

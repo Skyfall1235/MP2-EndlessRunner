@@ -160,7 +160,7 @@ MonoBehaviour:
   spawnSpacing: 42.5
   rampUpDuration: 100
   targetValue: 10
-  InteractableSpawntimeScalar: 2
+  InteractableSpawntimeScalar: 5
   EndOfGame:
     m_PersistentCalls:
       m_Calls:
@@ -372,6 +372,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1548988594}
+    - target: {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3647808828339566969, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -428,7 +452,8 @@ PrefabInstance:
       propertyPath: OnTap.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1146689746}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 706866467626473203, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -507,7 +532,7 @@ Transform:
   m_GameObject: {fileID: 567430051}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.74, y: 6.886562, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
