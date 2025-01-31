@@ -20,8 +20,10 @@ public class PowerUp_BubbleShield : MoveableObject, IInteractable
 
     [SerializeField] private IInteractable.InteractableType interactionType;
 
+    //this could have been an override but i like abstract methods, it forces me to not forget them
     public void Interact(PlayerMovement movementController = null)
     {
         movementController.ToggleBubbleShield(true);
+        Destroy(transform.parent.gameObject);
     }
 }

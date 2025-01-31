@@ -7,8 +7,8 @@ public class PlayerInputHandler : MonoBehaviour
 {
     public UnityEvent OnTap;
     [SerializeField] InputAction Tap;
-    //[SerializeField] private bool DEBUGJUMP = true;  NO LONGER NEEDED
 
+    //unity event based action mapping and event invoking
     private void OnEnable()
     {
         Tap.Enable();

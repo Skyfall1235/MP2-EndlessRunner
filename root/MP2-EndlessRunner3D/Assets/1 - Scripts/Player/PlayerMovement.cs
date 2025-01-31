@@ -15,6 +15,8 @@ public class PlayerMovement : MoveableObject
     public GameSpawner spawner;
     public UnityEvent<bool> ToggleShield = new UnityEvent<bool>();
 
+    //time slow and gravity were scrapped last minute due to me wanting models and not finding them in time
+
     void Awake()
     {
         objectRigidbody = GetComponent<Rigidbody>();
@@ -38,6 +40,7 @@ public class PlayerMovement : MoveableObject
         MoveObject(UpDirection, jumpForce);
     }
 
+    //i wrote this cool lil snippet of code for powerups but when with the bubble shield because of ease of use
     public void ChangeGravity()
     {
         StartCoroutine(ChangeGravitySequence());
@@ -58,6 +61,7 @@ public class PlayerMovement : MoveableObject
         ToggleShield.Invoke(val);
     }
 
+    //time slow and gravity manipulators. would have been able t5o throw these in if i had budgeted my time better
     IEnumerator ChangeGravitySequence()
     {
         objectRigidbody.useGravity = false;

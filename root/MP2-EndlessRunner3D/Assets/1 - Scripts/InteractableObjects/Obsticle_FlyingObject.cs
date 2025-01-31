@@ -21,6 +21,7 @@ public class Obsticle_FlyingObject : MoveableObject, IInteractable
 
     [SerializeField] private IInteractable.InteractableType interactionType;
 
+    //if you have a bubble shield burn it, else we end the game as usual
     public void Interact(PlayerMovement movementController = null)
     {
         //check if the buddle shield is there, if so, break both items

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//example code i need for animations
 public class SpikeTrapDemo : MonoBehaviour {
 
     //This script goes on the SpikeTrap prefab;

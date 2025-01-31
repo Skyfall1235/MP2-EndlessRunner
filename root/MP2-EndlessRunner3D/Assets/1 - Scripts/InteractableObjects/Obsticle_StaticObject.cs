@@ -2,19 +2,12 @@ using UnityEngine;
 
 public class Obsticle_StaticObject : MonoBehaviour, IInteractable
 {
-    //[SerializeField] Vector3 position;
-    //[SerializeField] float Yrot;
     public IInteractable.InteractableType InteractType
     {
         get
         {
             return interactionType;
         }
-    }
-    private void Start()
-    {
-        ///transform.position = position;
-        //transform.Rotate(new Vector3(0f, Yrot, 0));
     }
 
     private void Update()

@@ -154,6 +154,7 @@ MonoBehaviour:
   - {fileID: 915302207369977144, guid: 274e194077f3b5347a7c016a473c487d, type: 3}
   InteractablePrefabs:
   - {fileID: 761922592961705516, guid: d4c13898500d7a44ca0a978661336aa2, type: 3}
+  - {fileID: 7479925523160216996, guid: c017446b1834bb7478dcda015b495576, type: 3}
   gameObjectsToMove:
   - {fileID: 1566056438}
   movementDirection: {x: -1, y: 0, z: 0}
@@ -396,9 +397,17 @@ PrefabInstance:
       propertyPath: ToggleShield.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3195611276427558965, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3647808828339566969, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647808828339566969, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4299324542051776266, guid: 0a7a9f9c712970f4987d8b0931ad077a, type: 3}
       propertyPath: m_Mass
